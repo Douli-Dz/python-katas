@@ -28,6 +28,13 @@ def unique_in_order(iterable):
         if len(res) == 0 or item != res[-1]:
             res.append(item)
     return res
-            
+
+__author__ = "LaughDonor"
+
+from itertools import groupby
+from operator import itemgetter
+
+def unique_in_order(iterable):
+    return map(itemgetter(0), groupby(iterable))
 
 """
